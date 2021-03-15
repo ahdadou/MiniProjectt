@@ -53,7 +53,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(820, 47);
+            this.panel1.Size = new System.Drawing.Size(1246, 47);
             this.panel1.TabIndex = 0;
             // 
             // button4
@@ -151,7 +151,7 @@
             this.pnlBody.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlBody.Location = new System.Drawing.Point(0, 47);
             this.pnlBody.Name = "pnlBody";
-            this.pnlBody.Size = new System.Drawing.Size(820, 408);
+            this.pnlBody.Size = new System.Drawing.Size(1246, 514);
             this.pnlBody.TabIndex = 1;
             this.pnlBody.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlBody_Paint);
             // 
@@ -160,7 +160,7 @@
             this.cyclee1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cyclee1.Location = new System.Drawing.Point(0, 1);
             this.cyclee1.Name = "cyclee1";
-            this.cyclee1.Size = new System.Drawing.Size(820, 407);
+            this.cyclee1.Size = new System.Drawing.Size(1246, 513);
             this.cyclee1.TabIndex = 5;
             // 
             // panel2
@@ -169,7 +169,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(820, 1);
+            this.panel2.Size = new System.Drawing.Size(1246, 1);
             this.panel2.TabIndex = 4;
             // 
             // classes1
@@ -177,7 +177,7 @@
             this.classes1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.classes1.Location = new System.Drawing.Point(0, 0);
             this.classes1.Name = "classes1";
-            this.classes1.Size = new System.Drawing.Size(820, 408);
+            this.classes1.Size = new System.Drawing.Size(1246, 514);
             this.classes1.TabIndex = 3;
             // 
             // niveau1
@@ -185,7 +185,7 @@
             this.niveau1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.niveau1.Location = new System.Drawing.Point(0, 0);
             this.niveau1.Name = "niveau1";
-            this.niveau1.Size = new System.Drawing.Size(820, 408);
+            this.niveau1.Size = new System.Drawing.Size(1246, 514);
             this.niveau1.TabIndex = 2;
             // 
             // branches1
@@ -193,7 +193,7 @@
             this.branches1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.branches1.Location = new System.Drawing.Point(0, 0);
             this.branches1.Name = "branches1";
-            this.branches1.Size = new System.Drawing.Size(820, 408);
+            this.branches1.Size = new System.Drawing.Size(1246, 514);
             this.branches1.TabIndex = 1;
             // 
             // Platform
@@ -203,7 +203,7 @@
             this.Controls.Add(this.pnlBody);
             this.Controls.Add(this.panel1);
             this.Name = "Platform";
-            this.Size = new System.Drawing.Size(820, 455);
+            this.Size = new System.Drawing.Size(1246, 561);
             this.Load += new System.EventHandler(this.Platform_Load);
             this.panel1.ResumeLayout(false);
             this.pnlBody.ResumeLayout(false);
@@ -219,7 +219,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel pnlBody;
-        private Cycle cycle1;
         private Classes classes1;
         private Niveau niveau1;
         private Branches branches1;

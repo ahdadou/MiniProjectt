@@ -15,6 +15,7 @@ namespace MiniProject
         static Form1 _obj;
         private Button currentBtn;
         private Panel leftBorderBtn;
+
         public static Form1 Instance
         {
             get

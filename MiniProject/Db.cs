@@ -63,8 +63,6 @@ namespace MiniProject
             listBox.DataSource = bindingSource;
             listBox.DisplayMember = display;
             listBox.ValueMember = value;
-
-
         }
 
 

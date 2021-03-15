@@ -28,14 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cyclee));
             this.panel4 = new System.Windows.Forms.Panel();
             this.lblErrorNom = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtNomArab = new System.Windows.Forms.TextBox();
-            this.txtNom = new System.Windows.Forms.TextBox();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnAnnuler = new System.Windows.Forms.Button();
             this.btnValide = new System.Windows.Forms.Button();
@@ -46,9 +43,12 @@
             this.lstBoxCycle = new System.Windows.Forms.ListBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
-            this.btnImprime = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.txtNom = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.txtNomArab = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -58,17 +58,15 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.txtNomArab);
+            this.panel4.Controls.Add(this.txtNom);
             this.panel4.Controls.Add(this.lblErrorNom);
             this.panel4.Controls.Add(this.label7);
             this.panel4.Controls.Add(this.label6);
-            this.panel4.Controls.Add(this.txtNomArab);
-            this.panel4.Controls.Add(this.txtNom);
-            this.panel4.Controls.Add(this.panel7);
-            this.panel4.Controls.Add(this.panel6);
             this.panel4.Controls.Add(this.panel5);
             this.panel4.Controls.Add(this.btnAnnuler);
             this.panel4.Controls.Add(this.btnValide);
-            this.panel4.Location = new System.Drawing.Point(33, 51);
+            this.panel4.Location = new System.Drawing.Point(66, 80);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(321, 356);
             this.panel4.TabIndex = 21;
@@ -105,42 +103,6 @@
             this.label6.Size = new System.Drawing.Size(51, 19);
             this.label6.TabIndex = 21;
             this.label6.Text = "Nom  :";
-            // 
-            // txtNomArab
-            // 
-            this.txtNomArab.BackColor = System.Drawing.SystemColors.Control;
-            this.txtNomArab.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNomArab.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNomArab.Location = new System.Drawing.Point(114, 121);
-            this.txtNomArab.Name = "txtNomArab";
-            this.txtNomArab.Size = new System.Drawing.Size(207, 20);
-            this.txtNomArab.TabIndex = 20;
-            // 
-            // txtNom
-            // 
-            this.txtNom.BackColor = System.Drawing.SystemColors.Control;
-            this.txtNom.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNom.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNom.Location = new System.Drawing.Point(114, 67);
-            this.txtNom.Name = "txtNom";
-            this.txtNom.Size = new System.Drawing.Size(207, 20);
-            this.txtNom.TabIndex = 19;
-            // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.panel7.Location = new System.Drawing.Point(114, 143);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(207, 1);
-            this.panel7.TabIndex = 18;
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.panel6.Location = new System.Drawing.Point(114, 89);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(207, 1);
-            this.panel6.TabIndex = 17;
             // 
             // panel5
             // 
@@ -197,7 +159,7 @@
             this.btnsupprimer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnsupprimer.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnsupprimer.ForeColor = System.Drawing.Color.White;
-            this.btnsupprimer.Location = new System.Drawing.Point(469, 333);
+            this.btnsupprimer.Location = new System.Drawing.Point(502, 369);
             this.btnsupprimer.Name = "btnsupprimer";
             this.btnsupprimer.Size = new System.Drawing.Size(140, 35);
             this.btnsupprimer.TabIndex = 20;
@@ -214,7 +176,7 @@
             this.btnModifier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModifier.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModifier.ForeColor = System.Drawing.Color.White;
-            this.btnModifier.Location = new System.Drawing.Point(620, 333);
+            this.btnModifier.Location = new System.Drawing.Point(653, 369);
             this.btnModifier.Name = "btnModifier";
             this.btnModifier.Size = new System.Drawing.Size(140, 35);
             this.btnModifier.TabIndex = 19;
@@ -226,7 +188,7 @@
             // 
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Location = new System.Drawing.Point(469, 51);
+            this.panel1.Location = new System.Drawing.Point(502, 80);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(291, 272);
             this.panel1.TabIndex = 18;
@@ -277,28 +239,11 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "Liste des Cycles";
             // 
-            // btnImprime
-            // 
-            this.btnImprime.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(76)))), ((int)(((byte)(121)))));
-            this.btnImprime.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnImprime.FlatAppearance.BorderSize = 0;
-            this.btnImprime.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnImprime.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnImprime.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnImprime.ForeColor = System.Drawing.Color.White;
-            this.btnImprime.Location = new System.Drawing.Point(469, 371);
-            this.btnImprime.Name = "btnImprime";
-            this.btnImprime.Size = new System.Drawing.Size(291, 35);
-            this.btnImprime.TabIndex = 17;
-            this.btnImprime.Text = "Imprimer les cycles";
-            this.btnImprime.UseVisualStyleBackColor = false;
-            this.btnImprime.Click += new System.EventHandler(this.btnImprime_Click);
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(302, 16);
+            this.label4.Location = new System.Drawing.Point(340, 15);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(172, 26);
             this.label4.TabIndex = 16;
@@ -314,6 +259,67 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Ajoute de Cycle";
             // 
+            // printPreviewDialog1
+            // 
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Document = this.printDocument1;
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
+            // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            // 
+            // txtNom
+            // 
+            this.txtNom.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.txtNom.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.txtNom.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtNom.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtNom.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtNom.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtNom.HintForeColor = System.Drawing.Color.Empty;
+            this.txtNom.HintText = "";
+            this.txtNom.isPassword = false;
+            this.txtNom.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(76)))), ((int)(((byte)(121)))));
+            this.txtNom.LineIdleColor = System.Drawing.Color.Gray;
+            this.txtNom.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(76)))), ((int)(((byte)(121)))));
+            this.txtNom.LineThickness = 3;
+            this.txtNom.Location = new System.Drawing.Point(114, 58);
+            this.txtNom.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNom.MaxLength = 32767;
+            this.txtNom.Name = "txtNom";
+            this.txtNom.Size = new System.Drawing.Size(207, 33);
+            this.txtNom.TabIndex = 22;
+            this.txtNom.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // txtNomArab
+            // 
+            this.txtNomArab.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.txtNomArab.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.txtNomArab.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtNomArab.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtNomArab.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtNomArab.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtNomArab.HintForeColor = System.Drawing.Color.Empty;
+            this.txtNomArab.HintText = "";
+            this.txtNomArab.isPassword = false;
+            this.txtNomArab.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(76)))), ((int)(((byte)(121)))));
+            this.txtNomArab.LineIdleColor = System.Drawing.Color.Gray;
+            this.txtNomArab.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(76)))), ((int)(((byte)(121)))));
+            this.txtNomArab.LineThickness = 3;
+            this.txtNomArab.Location = new System.Drawing.Point(114, 115);
+            this.txtNomArab.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNomArab.MaxLength = 32767;
+            this.txtNomArab.Name = "txtNomArab";
+            this.txtNomArab.Size = new System.Drawing.Size(207, 33);
+            this.txtNomArab.TabIndex = 23;
+            this.txtNomArab.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
             // Cyclee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -322,10 +328,9 @@
             this.Controls.Add(this.btnsupprimer);
             this.Controls.Add(this.btnModifier);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.btnImprime);
             this.Controls.Add(this.label4);
             this.Name = "Cyclee";
-            this.Size = new System.Drawing.Size(809, 440);
+            this.Size = new System.Drawing.Size(1246, 513);
             this.Load += new System.EventHandler(this.Cyclee_Load);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
@@ -346,10 +351,6 @@
         private System.Windows.Forms.Label lblErrorNom;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtNomArab;
-        private System.Windows.Forms.TextBox txtNom;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnAnnuler;
@@ -361,7 +362,10 @@
         private System.Windows.Forms.ListBox lstBoxCycle;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button btnImprime;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox txtNom;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox txtNomArab;
     }
 }

@@ -34,14 +34,14 @@ namespace MiniProject
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (!Form1.Instance.panelBody.Controls.ContainsKey("Cycle"))
-            {
-                Cycle un = new Cycle();
-                un.Dock = DockStyle.Fill;
-                Form1.Instance.panelBody.Controls.Add(un);
-            }
-            Form1.Instance.panelBody.Controls["Cycle"].BringToFront();
-            Form1.Instance.backButton.Visible = true;
+            //if (!Form1.Instance.panelBody.Controls.ContainsKey("Cycle"))
+            //{
+            //    //Cycle un = new Cycle();
+            //    un.Dock = DockStyle.Fill;
+            //    Form1.Instance.panelBody.Controls.Add(un);
+            //}
+            //Form1.Instance.panelBody.Controls["Cycle"].BringToFront();
+            //Form1.Instance.backButton.Visible = true;
         }
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
