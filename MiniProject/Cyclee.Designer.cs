@@ -30,6 +30,11 @@
         {
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnAjouter = new System.Windows.Forms.Button();
+            this.txtid = new System.Windows.Forms.TextBox();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.txtNomarab = new System.Windows.Forms.TextBox();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.txtNom = new System.Windows.Forms.TextBox();
             this.lblErrorNom = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -45,11 +50,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtNom = new System.Windows.Forms.TextBox();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.txtNomarab = new System.Windows.Forms.TextBox();
-            this.txtid = new System.Windows.Forms.TextBox();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -88,11 +88,57 @@
             this.btnAjouter.ForeColor = System.Drawing.Color.White;
             this.btnAjouter.Location = new System.Drawing.Point(0, 170);
             this.btnAjouter.Name = "btnAjouter";
-            this.btnAjouter.Size = new System.Drawing.Size(321, 35);
+            this.btnAjouter.Size = new System.Drawing.Size(321, 41);
             this.btnAjouter.TabIndex = 24;
             this.btnAjouter.Text = "Ajouter";
             this.btnAjouter.UseVisualStyleBackColor = false;
             this.btnAjouter.Click += new System.EventHandler(this.btnAjouter_Click);
+            // 
+            // txtid
+            // 
+            this.txtid.BackColor = System.Drawing.SystemColors.Control;
+            this.txtid.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtid.Location = new System.Drawing.Point(190, 179);
+            this.txtid.Multiline = true;
+            this.txtid.Name = "txtid";
+            this.txtid.Size = new System.Drawing.Size(105, 10);
+            this.txtid.TabIndex = 27;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel7.Location = new System.Drawing.Point(114, 143);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(207, 1);
+            this.panel7.TabIndex = 26;
+            // 
+            // txtNomarab
+            // 
+            this.txtNomarab.BackColor = System.Drawing.SystemColors.Control;
+            this.txtNomarab.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNomarab.Location = new System.Drawing.Point(114, 119);
+            this.txtNomarab.Multiline = true;
+            this.txtNomarab.Name = "txtNomarab";
+            this.txtNomarab.Size = new System.Drawing.Size(207, 25);
+            this.txtNomarab.TabIndex = 25;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel6.Location = new System.Drawing.Point(111, 91);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(207, 1);
+            this.panel6.TabIndex = 23;
+            // 
+            // txtNom
+            // 
+            this.txtNom.BackColor = System.Drawing.SystemColors.Control;
+            this.txtNom.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNom.Location = new System.Drawing.Point(111, 67);
+            this.txtNom.Multiline = true;
+            this.txtNom.Name = "txtNom";
+            this.txtNom.Size = new System.Drawing.Size(207, 25);
+            this.txtNom.TabIndex = 22;
             // 
             // lblErrorNom
             // 
@@ -158,9 +204,9 @@
             this.btnAnnuler.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAnnuler.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAnnuler.ForeColor = System.Drawing.Color.White;
-            this.btnAnnuler.Location = new System.Drawing.Point(181, 211);
+            this.btnAnnuler.Location = new System.Drawing.Point(181, 217);
             this.btnAnnuler.Name = "btnAnnuler";
-            this.btnAnnuler.Size = new System.Drawing.Size(140, 35);
+            this.btnAnnuler.Size = new System.Drawing.Size(140, 41);
             this.btnAnnuler.TabIndex = 12;
             this.btnAnnuler.Text = "Annuler";
             this.btnAnnuler.UseVisualStyleBackColor = false;
@@ -175,9 +221,9 @@
             this.btnValide.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnValide.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnValide.ForeColor = System.Drawing.Color.White;
-            this.btnValide.Location = new System.Drawing.Point(0, 211);
+            this.btnValide.Location = new System.Drawing.Point(0, 217);
             this.btnValide.Name = "btnValide";
-            this.btnValide.Size = new System.Drawing.Size(141, 35);
+            this.btnValide.Size = new System.Drawing.Size(140, 41);
             this.btnValide.TabIndex = 9;
             this.btnValide.Text = "Valide";
             this.btnValide.UseVisualStyleBackColor = false;
@@ -194,7 +240,7 @@
             this.btnsupprimer.ForeColor = System.Drawing.Color.White;
             this.btnsupprimer.Location = new System.Drawing.Point(502, 369);
             this.btnsupprimer.Name = "btnsupprimer";
-            this.btnsupprimer.Size = new System.Drawing.Size(140, 35);
+            this.btnsupprimer.Size = new System.Drawing.Size(140, 41);
             this.btnsupprimer.TabIndex = 20;
             this.btnsupprimer.Text = "Supprimer";
             this.btnsupprimer.UseVisualStyleBackColor = false;
@@ -211,7 +257,7 @@
             this.btnModifier.ForeColor = System.Drawing.Color.White;
             this.btnModifier.Location = new System.Drawing.Point(653, 369);
             this.btnModifier.Name = "btnModifier";
-            this.btnModifier.Size = new System.Drawing.Size(140, 35);
+            this.btnModifier.Size = new System.Drawing.Size(140, 41);
             this.btnModifier.TabIndex = 19;
             this.btnModifier.Text = "Modifier";
             this.btnModifier.UseVisualStyleBackColor = false;
@@ -281,52 +327,7 @@
             this.label4.Size = new System.Drawing.Size(172, 26);
             this.label4.TabIndex = 16;
             this.label4.Text = "Gestion des Cycles";
-            // 
-            // txtNom
-            // 
-            this.txtNom.BackColor = System.Drawing.SystemColors.Control;
-            this.txtNom.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNom.Location = new System.Drawing.Point(111, 67);
-            this.txtNom.Multiline = true;
-            this.txtNom.Name = "txtNom";
-            this.txtNom.Size = new System.Drawing.Size(207, 25);
-            this.txtNom.TabIndex = 22;
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel6.Location = new System.Drawing.Point(111, 91);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(207, 1);
-            this.panel6.TabIndex = 23;
-            // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel7.Location = new System.Drawing.Point(114, 143);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(207, 1);
-            this.panel7.TabIndex = 26;
-            // 
-            // txtNomarab
-            // 
-            this.txtNomarab.BackColor = System.Drawing.SystemColors.Control;
-            this.txtNomarab.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNomarab.Location = new System.Drawing.Point(114, 119);
-            this.txtNomarab.Multiline = true;
-            this.txtNomarab.Name = "txtNomarab";
-            this.txtNomarab.Size = new System.Drawing.Size(207, 25);
-            this.txtNomarab.TabIndex = 25;
-            // 
-            // txtid
-            // 
-            this.txtid.BackColor = System.Drawing.SystemColors.Control;
-            this.txtid.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtid.Location = new System.Drawing.Point(190, 179);
-            this.txtid.Multiline = true;
-            this.txtid.Name = "txtid";
-            this.txtid.Size = new System.Drawing.Size(105, 10);
-            this.txtid.TabIndex = 27;
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // Cyclee
             // 
@@ -372,10 +373,10 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnAjouter;
-        private System.Windows.Forms.TextBox txtNom;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.TextBox txtNomarab;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.TextBox txtid;
+        private System.Windows.Forms.TextBox txtNom;
     }
 }

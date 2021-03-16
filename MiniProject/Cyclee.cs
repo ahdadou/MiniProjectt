@@ -5,7 +5,6 @@ using System.Drawing;
 using System.Data;
 using System.Linq;
 using System.Text;
-using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
 using System.Windows.Forms;
@@ -24,11 +23,13 @@ namespace MiniProject
             InitializeComponent();
         }
 
-        private void Cyclee_Load(object sender, EventArgs e)
+        public void Cyclee_Load(object sender, EventArgs e)
         {
             active(false);
+            lstBoxCycle.Items.Clear();
             Db.RemplissageListeBox("select * from cycle", "cycle", "nomCycle", "idCycle", ref bs, lstBoxCycle, ref da);
             lblErrorNom.Visible = false;
+
             txtid.DataBindings.Add("text", bs, "idCycle");
             txtNom.DataBindings.Add("text", bs, "NomCycle");
             txtNomarab.DataBindings.Add("Text", bs, "NomCycleArabe");
@@ -92,25 +93,30 @@ namespace MiniProject
         {
             if (lstBoxCycle.Items.Count > 0)
             {
-                string cs = ConfigurationManager.ConnectionStrings["ecoleConnectionString"].ConnectionString;
+               // string cs = ConfigurationManager.ConnectionStrings["ecoleConnectionString"].ConnectionString;
 
                 if (MessageBox.Show("Voulez Vous Supprimer Ce Cycle", "Attention", MessageBoxButtons.OKCancel) == DialogResult.OK)
                 {
-                    SqlConnection cn = new SqlConnection(cs);
-                    cn.Open();
-                    string req = "delete from cycle where idCycle=@id";
-                    SqlCommand com = new SqlCommand(req, cn);
-                    com.Parameters.Add(new SqlParameter("@id", lstBoxCycle.SelectedValue));
-                    var dr = com.ExecuteScalar();
+                    //SqlConnection cn = new SqlConnection(cs);
+                    //cn.Open();
+                    //string req = "delete from cycle where idCycle=@id";
+                    //SqlCommand com = new SqlCommand(req, cn);
+                    //com.Parameters.Add(new SqlParameter("@id", lstBoxCycle.SelectedValue));
+                    //var dr = com.ExecuteScalar();
 
-                    // dr.Close();
-                    dr = null;
-                    com = null;
+                    //// dr.Close();
+                    //dr = null;
+                    //com = null;
+                    //Db.RemplissageListeBox("select * from cycle", "cycle", "nomCycle", "idCycle", ref bs, lstBoxCycle,ref da);
 
-                    Db.RemplissageListeBox("select * from cycle", "cycle", "nomCycle", "idCycle", ref bs, lstBoxCycle,ref da);
-                }
-                else
-                {
+                    try{
+                        bs.RemoveCurrent();
+                        this.da.Update(Db.ds, "Cycle");
+                    }catch(Exception ex)
+                    {
+                        
+                    }
+
                 }
             }
         }
@@ -118,7 +124,7 @@ namespace MiniProject
         private void btnModifier_Click(object sender, EventArgs e)
         {
             active(true);
-            string cs = ConfigurationManager.ConnectionStrings["ecoleConnectionString"].ConnectionString;
+            //string cs = ConfigurationManager.ConnectionStrings["ecoleConnectionString"].ConnectionString;
 
             //SqlConnection cn = new SqlConnection(cs);
             //cn.Open();
@@ -172,6 +178,11 @@ namespace MiniProject
         }
 
         private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
         {
 
         }

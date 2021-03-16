@@ -91,7 +91,7 @@ namespace MiniProject
 
         //Remplire ListBox with  a relation with dropDown Button
 
-        static public void RemplissageListeBoxRelation(string requet, string tablePrimary, string tableForeign,string primaryKey, string display, string value, ref BindingSource bindingSourcePrimary, ref BindingSource bindingSourceForeign, ListBox listBox)
+        static public void RemplissageListeBoxRelation(string requet, string tablePrimary, string tableForeign,string primaryKey, string display, string value, ref BindingSource bindingSourcePrimary, ref BindingSource bindingSourceForeign, ListBox listBox,ref SqlDataAdapter dab)
         {
             openConnection();
             cmd = new SqlCommand(requet, cn);
@@ -102,6 +102,8 @@ namespace MiniProject
                     ds.Tables[tableForeign].Clear();
             }
             catch (Exception ex) { }
+            dab = new SqlDataAdapter(cmd);
+            comBuild = new SqlCommandBuilder(dab);
             da.Fill(ds, tableForeign);
 
             DataColumn c1 = ds.Tables[tablePrimary].Columns[primaryKey];
@@ -131,6 +133,12 @@ namespace MiniProject
             return id;
         }
 
-
+        //static public void initialiserDS()
+        //{
+        //    ds.Relations.Clear();
+        //    foreach (DataTable table in ds.Tables)
+        //        table.Constraints.Clear();
+        //    ds.Tables.Clear();
+        //}
     }
 }

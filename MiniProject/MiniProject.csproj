@@ -67,6 +67,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BrancheGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BrancheGrid.Designer.cs">
+      <DependentUpon>BrancheGrid.cs</DependentUpon>
+    </Compile>
     <Compile Include="Branches.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -98,6 +104,12 @@
     <Compile Include="FirstPage.Designer.cs">
       <DependentUpon>FirstPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormCycle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCycle.Designer.cs">
+      <DependentUpon>FormCycle.cs</DependentUpon>
+    </Compile>
     <Compile Include="Niveau.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -124,6 +136,9 @@
     <Compile Include="Scolarite.Designer.cs">
       <DependentUpon>Scolarite.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="BrancheGrid.resx">
+      <DependentUpon>BrancheGrid.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Branches.resx">
       <DependentUpon>Branches.cs</DependentUpon>
     </EmbeddedResource>
@@ -138,6 +153,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FirstPage.resx">
       <DependentUpon>FirstPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCycle.resx">
+      <DependentUpon>FormCycle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Niveau.resx">
       <DependentUpon>Niveau.cs</DependentUpon>
